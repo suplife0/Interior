@@ -119,6 +119,7 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
+-define:UNITY_XR_ARKIT_LOADER_ENABLED
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"/Applications/Unity/Hub/Editor/2021.3.3f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
@@ -333,6 +334,7 @@
 -r:"Library/Bee/artifacts/900b0aE.dag/Unity.Services.Core.Analytics.ref.dll"
 -r:"Library/Bee/artifacts/900b0aE.dag/Unity.Services.Core.Environments.ref.dll"
 -r:"Library/Bee/artifacts/900b0aE.dag/Unity.Services.Core.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/Unity.Subsystem.Registration.ref.dll"
 -r:"Library/Bee/artifacts/900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.ref.dll"
 -r:"Library/Bee/artifacts/900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.ref.dll"
 -r:"Library/Bee/artifacts/900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.ref.dll"
@@ -350,9 +352,24 @@
 -r:"Library/Bee/artifacts/900b0aE.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/900b0aE.dag/Unity.VisualStudio.Editor.ref.dll"
 -r:"Library/Bee/artifacts/900b0aE.dag/Unity.VSCode.Editor.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/Unity.XR.ARFoundation.Editor.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/Unity.XR.ARFoundation.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/Unity.XR.ARKit.Editor.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/Unity.XR.ARKit.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/Unity.XR.ARSubsystems.Editor.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/Unity.XR.ARSubsystems.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/Unity.XR.Management.Editor.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/Unity.XR.Management.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/UnityEditor.SpatialTracking.ref.dll"
 -r:"Library/Bee/artifacts/900b0aE.dag/UnityEditor.UI.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/UnityEditor.XR.LegacyInputHelpers.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/UnityEngine.SpatialTracking.ref.dll"
 -r:"Library/Bee/artifacts/900b0aE.dag/UnityEngine.UI.ref.dll"
+-r:"Library/Bee/artifacts/900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
+"Assets/Scripts/ApplicationInfo.cs"
+"Assets/Scripts/ScalingManager.cs"
 "Assets/Scripts/StepManager.cs"
+"Assets/Scripts/TrackingManager.cs"
 "Assets/Scripts/UIManager.cs"
 -langversion:9.0
 
