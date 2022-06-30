@@ -13,6 +13,8 @@ public class ScalingManager : MonoBehaviour
     public Vector3 cameraTargetPosition;
 
     public Toggle[] toggles;
+
+    private WaitForEndOfFrame oneFrame;
     
     public void XScaling(string inputMsg)
     {
@@ -51,18 +53,22 @@ public class ScalingManager : MonoBehaviour
         ApplicationInfo.Instance.scale = scalingCube.localScale;
         
         cameraTargetPosition = new Vector3(0, 1, -2.5f) * maxAxis;
-
+        oneFrame = new WaitForEndOfFrame();
         StartCoroutine(CoSetCameraPosition());
     }
 
     private IEnumerator CoSetCameraPosition()
     {
-        while (true)
+        bool moving = true;
+        while (moving)
         {
             scalingCamera.transform.position =
                 Vector3.Lerp(scalingCamera.transform.position, cameraTargetPosition, Time.deltaTime);
-            yield return new WaitForEndOfFrame();
+            yield return oneFrame;
+            if (scalingCamera.transform.position == cameraTargetPosition)
+                moving = false;
         }
+        StopAllCoroutines();
     }
 
     public void SetUnit()
