@@ -68,7 +68,7 @@ public class TrackingManager : MonoBehaviour
         
     }
 
-    private void StartDetectingPlane()
+    private void StartDetectingPlane() 
     {
         UIManager.Instance.trackingText.text = "Tracking";
         UIManager.Instance.trackingText.color = Color.green;
