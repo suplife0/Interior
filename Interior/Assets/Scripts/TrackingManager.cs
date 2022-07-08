@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class TrackingManager : MonoBehaviour
 {
+    public TObj currentObj;
+    
     public Transform trackingObj;
     public Transform scalingObj;
     public Transform ringObj;
@@ -171,4 +174,13 @@ public class TrackingManager : MonoBehaviour
             }
         }
     }
+    
+    // new function
+
+    public void AddNewTObj()
+    {
+        
+    }
+
+    
 }
