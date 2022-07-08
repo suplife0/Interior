@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1173,7 +1173,7 @@ GameObject:
   - component: {fileID: 561065071}
   - component: {fileID: 561065070}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Unit_cm_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2632,7 +2632,7 @@ GameObject:
   - component: {fileID: 1591472923}
   - component: {fileID: 1591472922}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Unit_m_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3197,7 +3197,7 @@ GameObject:
   - component: {fileID: 1784466587}
   - component: {fileID: 1784466586}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Unit_mm_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
