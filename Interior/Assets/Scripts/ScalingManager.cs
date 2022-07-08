@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.Serialization;
@@ -15,7 +16,7 @@ public class ScalingManager : MonoBehaviour
     public Toggle[] toggles;
 
     private WaitForEndOfFrame oneFrame;
-    
+
     public void XScaling(string inputMsg)
     {
         if (int.TryParse(inputMsg, out int inputNum))
@@ -53,10 +54,11 @@ public class ScalingManager : MonoBehaviour
         ApplicationInfo.Instance.scale = scalingCube.localScale;
         
         cameraTargetPosition = new Vector3(0, 1, -2.5f) * maxAxis;
+
         oneFrame = new WaitForEndOfFrame();
         StartCoroutine(CoSetCameraPosition());
     }
-
+    
     private IEnumerator CoSetCameraPosition()
     {
         bool moving = true;
@@ -64,21 +66,12 @@ public class ScalingManager : MonoBehaviour
         {
             scalingCamera.transform.position =
                 Vector3.Lerp(scalingCamera.transform.position, cameraTargetPosition, Time.deltaTime);
-            yield return oneFrame;
-            if (scalingCamera.transform.position == cameraTargetPosition)
+            
+            // Stop Routine
+            if (Mathf.Abs(cameraTargetPosition.y - scalingCamera.transform.position.y) < 0.02f)
                 moving = false;
-        }
-        StopAllCoroutines();
-    }
-
-    public void SetUnit()
-    {
-        for (int i = 0; i < toggles.Length; i++)
-        {
-            if (toggles[i].isOn)
-            {
-                ApplicationInfo.Instance.unit = (ApplicationInfo.Unit) i;
-            }
+            
+            yield return oneFrame;
         }
     }
 }

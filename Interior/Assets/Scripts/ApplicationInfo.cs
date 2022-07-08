@@ -8,6 +8,10 @@ public class ApplicationInfo : MonoBehaviour
     public static ApplicationInfo Instance;
 
     public Vector3 scale;
+
+
+    public bool unitSet = false;
+    
     public enum Unit
     {
         mm = 0,
@@ -27,6 +31,28 @@ public class ApplicationInfo : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        
+    }
+
+    public void SetUnit()
+    {
+        switch (unit)
+        {
+            case Unit.cm:
+                scale = scale / 100;
+                break;
+            case Unit.m:
+                break;
+            case Unit.mm:
+                scale = scale / 10000;
+                break;
+            default:
+                break;
         }
     }
 }
