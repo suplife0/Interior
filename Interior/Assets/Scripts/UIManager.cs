@@ -18,7 +18,9 @@ public class UIManager : MonoBehaviour
 
     public Color mainUIColor;
     
-    private Dictionary<ApplicationInfo.Unit, Text> buttons;
+    public Animation scalingPanelAnim;
+    
+    private Dictionary<ScalingManager.Unit, Text> buttons;
 
     public void Awake()
     {
@@ -32,10 +34,10 @@ public class UIManager : MonoBehaviour
     {
         if (unitTexts != null)
         {
-            buttons = new Dictionary<ApplicationInfo.Unit, Text>(3);
-            buttons.Add(ApplicationInfo.Unit.mm, unitTexts[0]);
-            buttons.Add(ApplicationInfo.Unit.cm, unitTexts[1]);
-            buttons.Add(ApplicationInfo.Unit.m, unitTexts[2]);
+            buttons = new Dictionary<ScalingManager.Unit, Text>(3);
+            buttons.Add(ScalingManager.Unit.mm, unitTexts[0]);
+            buttons.Add(ScalingManager.Unit.cm, unitTexts[1]);
+            buttons.Add(ScalingManager.Unit.m, unitTexts[2]);
         }
     }
 
@@ -46,13 +48,23 @@ public class UIManager : MonoBehaviour
 
     public void OnClickUnitButton(int setUnit)
     {
-        if (ApplicationInfo.Instance.unit != null)
-        {
-            buttons[ApplicationInfo.Instance.unit].color = Color.white;
-        }
-        ApplicationInfo.Instance.unit = (ApplicationInfo.Unit)setUnit;
-        buttons[ApplicationInfo.Instance.unit].color = mainUIColor;
+        buttons[ScalingManager.Instance.unit].color = Color.black;    
+        ScalingManager.Instance.unit = (ScalingManager.Unit)setUnit;
+        buttons[ScalingManager.Instance.unit].color = mainUIColor;
+    }
 
-        ApplicationInfo.Instance.unitSet = true;
+    public void OnClickAddButton()
+    {
+        Debug.Log("Hellos");
+        scalingPanelAnim["ScalingPanelAnimation"].speed = 1;
+        scalingPanelAnim["ScalingPanelAnimation"].time = 0;
+        scalingPanelAnim.Play();
+    }
+
+    public void OnClickCloseButton()
+    {
+        scalingPanelAnim["ScalingPanelAnimation"].speed = -1;
+        scalingPanelAnim["ScalingPanelAnimation"].time = scalingPanelAnim["ScalingPanelAnimation"].length;
+        scalingPanelAnim.Play();
     }
 }
