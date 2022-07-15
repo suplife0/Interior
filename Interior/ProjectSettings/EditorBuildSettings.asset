@@ -6,17 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/01_Menu.unity
-    guid: 19936897e05ab4062ab969fdb4be4ebb
-  - enabled: 1
-    path: Assets/Scenes/00_Loading.unity
-    guid: 16f70b7b4db814d6e9322845fe7b0544
-  - enabled: 1
-    path: Assets/Scenes/02_Main.unity
-    guid: 6d43d9f0a8bab4ff4b91470b231ad1a3
-  - enabled: 1
-    path: Assets/Scenes/03_TestScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/05_PlaneDetectScene.unity
+    guid: 8eb4eb25d4a624a0384be59dcdb6985b
   m_configObjects:
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: d1043076303354327b3199d03ff2314b, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1d146e8c87178454fa88021e4f006d50, type: 2}
